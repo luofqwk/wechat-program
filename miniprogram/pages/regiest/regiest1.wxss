@@ -1,0 +1,91 @@
+/* 容器样式 */
+.container {
+    min-height: 100vh; /* 确保容器占满整个视口高度 */
+    padding: 20rpx; /* 保留边缘空隙 */
+    box-sizing: border-box; /* 包含padding在内的高度计算 */
+    background: #f5f5f5; /* 添加背景色 */
+  }
+  .image-container {
+    margin-top: 10px; /* 图片容器的上边距 */
+  }
+  .image-wrapper {
+    position: relative; /* 相对定位以便放置删除按钮 */
+    display: inline-block; /* 适应图片的大小 */
+    margin-right: 10px; /* 图片之间的间距 */
+  }
+  .thumbnail {
+    width: 100px; /* 固定宽度 */
+    height: 100px; /* 固定高度 */
+  }
+  /* 表单项样式 */
+  .form-item {
+    margin-bottom: 20rpx; /* 表单项之间的间距 */
+    padding: 20rpx; /* 内部留白 */
+    background: white; /* 白色背景 */
+    border-radius: 12rpx; /* 圆角 */
+    box-shadow: 0 2rpx 6rpx rgba(0,0,0,0.05); /* 轻微阴影 */
+  }
+  
+  /* 上传容器 */
+  .upload-container {
+    width: 100%;
+    margin-top: 20rpx;
+    display: flex;
+    flex-wrap: wrap; /* 允许换行 */
+    gap: 20rpx; /* 图片之间的间距 */
+  }
+  
+  /* 图片预览项 */
+  .preview-item {
+    position: relative;
+    width: calc(50% - 10rpx); /* 两列布局，考虑间隙 */
+    height: 200rpx;
+    border-radius: 12rpx;
+    overflow: hidden;
+    background: #fafafa;
+  }
+  
+  /* 图片样式 */
+  .preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保持图片比例 */
+  }
+  
+  /* 添加按钮样式 */
+  .add-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2rpx dashed #ddd;
+    font-size: 48rpx;
+    color: #999;
+    background: #fafafa;
+  }
+  
+  /* 删除按钮 */
+  .delete-btn {
+    position: absolute;
+    right: 8rpx;
+    top: 8rpx;
+    width: 40rpx;
+    height: 40rpx;
+    background: rgba(255,0,0,0.8);
+    color: white;
+    text-align: center;
+    line-height: 40rpx;
+    border-radius: 50%;
+    font-size: 36rpx;
+  }
+  
+  /* 提交按钮 */
+  .submit-btn {
+    margin-top: 40rpx;
+    width: 100%;
+    background: #0081ff;
+    color: white;
+    border-radius: 12rpx;
+    font-size: 32rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+  }

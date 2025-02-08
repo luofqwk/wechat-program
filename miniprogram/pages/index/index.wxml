@@ -1,0 +1,9 @@
+<view class="container">
+  <button 
+    open-type="getPhoneNumber" 
+    bindgetphonenumber="getPhoneNumber"
+    class="login-btn"
+  >
+    微信一键登录
+  </button>
+</view>

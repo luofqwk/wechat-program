@@ -1,0 +1,81 @@
+<view class="container">
+  <form bindsubmit="formSubmit">
+    <!-- 身份选择 -->
+    <view class="form-item">
+      <text class="label">身份类型：</text>
+      <radio-group name="userType" class="radio-group">
+        <label class="radio" wx:for="{{['医生', '护士']}}" wx:key="*this">
+          <radio value="{{item}}" checked="{{userType === item}}"/>{{item}}
+        </label>
+      </radio-group>
+    </view>
+
+    <!-- 基本信息输入 -->
+    <view class="form-item">
+      <text class="label">姓名：</text>
+      <input class="input" name="name" placeholder="请输入姓名" maxlength="10"/>
+    </view>
+
+    <view class="form-item">
+      <text class="label">身份证号：</text>
+      <input class="input" name="idCard" placeholder="请输入18位身份证号" maxlength="18"/>
+    </view>
+
+    <view class="form-item">
+      <text class="label">年龄：</text>
+      <input class="input" name="age" placeholder="请输入年龄" type="number"/>
+    </view>
+
+    <view class="form-item">
+      <text class="label">性别：</text>
+      <picker class="picker" name="gender" range="{{genders}}" value="{{genderIndex}}" bindchange="bindGenderChange">
+        <view class="picker-text">{{gender ? '（' + gender + '）' : '（请选择）'}}</view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="label">所在医院：</text>
+      <input class="input" name="hospital" placeholder="请输入医院全称"/>
+    </view>
+
+    <view class="form-item">
+      <text class="label">所在科室：</text>
+      <input class="input" name="department" placeholder="请输入科室名称"/>
+    </view>
+
+    <view class="form-item">
+      <text class="label">联系电话：</text>
+      <input class="input" name="phone" placeholder="请输入11位手机号" type="number"/>
+    </view>
+
+    <!-- 证件上传保持原有结构，仅添加文字说明 -->
+    <view class="upload-section">
+      <text>身份证照片：</text>
+      <view class="image-container"></view>
+      <block wx:for="{{idCardImages}}" wx:key="index">
+        <view class="image-wrapper">
+          <image src="{{item}}" mode="aspectFit" class="thumbnail"></image>
+        <text class="delete-btn" bindtap="deleteIdCardImage" data-type="idCard" data-index="{{index}}">×</text>
+      </view>
+    </block>
+    </view>
+      <button bindtap="uploadIdCard" data-type="idCard">上传身份证</button>
+
+
+    <view class="upload-section">
+      <text>工作证照片：</text>
+      <view  class="image-container"></view>
+      <block wx:for="{{workCardImages}}" wx:key="index">
+        <view class="image-wrapper">
+          <image src="{{item}}" mode="aspectFit" class="thumbnail"></image>
+        <text class="delete-btn" bindtap="deleteWorkCardImage" data-type="workCard" data-index="{{index}}">×</text>
+      </view>
+       </block>
+    </view>
+      <button bindtap="uploadWorkCard" data-type="idCard">上传工作证</button>
+
+
+   
+    <button form-type="submit" class="submit-btn">提交注册</button>
+  </form>
+</view>

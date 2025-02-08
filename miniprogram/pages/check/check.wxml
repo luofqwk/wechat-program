@@ -1,0 +1,21 @@
+<view class="container">
+  <view wx:for="{{list}}" wx:key="_id" class="item" bindtap="navigateToDetail" data-id="{{item._id}}">
+    <view class="header">
+      <text class="name">{{item.name}}</text>
+      <text class="time">{{formatTime(item.createTime)}}</text>
+    </view>
+    <view class="content">
+      <text class="label">性别：</text>
+      <text class="value">{{item.gender}}</text>
+      <text class="label">类型：</text>
+      <text class="value">{{item.userType}}</text>
+    </view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading">
+    <text>加载中...</text>
+  </view>
+  <view wx:if="{{!hasMore}}" class="no-more">
+    <text>没有更多数据了</text>
+  </view>
+</view>

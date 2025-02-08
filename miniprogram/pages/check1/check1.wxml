@@ -1,0 +1,40 @@
+<view class="container">
+  <!-- 基本信息 -->
+  <view class="section">
+    <view class="section-title">基本信息</view>
+    <view class="info-item">
+      <text class="label">姓名：</text>
+      <text class="value">{{detail.name}}</text>
+    </view>
+    <view class="info-item">
+      <text class="label">性别：</text>
+      <text class="value">{{detail.gender}}</text>
+    </view>
+    <view class="info-item">
+      <text class="label">类型：</text>
+      <text class="value">{{detail.userType}}</text>
+    </view>
+  </view>
+
+  <!-- 身份证照片 -->
+  <view class="section">
+    <view class="section-title">身份证照片</view>
+    <view class="image-list">
+      <image wx:for="{{idCardUrls}}" wx:key="index" src="{{item}}" mode="aspectFill" class="image-item" bindtap="previewImage" data-url="{{item.tempFileURL}}"></image>
+    </view>
+  </view>
+
+  <!-- 工作证照片 -->
+  <view class="section">
+    <view class="section-title">工作证照片</view>
+    <view class="image-list">
+      <image wx:for="{{workCardUrls}}" wx:key="index" src="{{item}}" mode="aspectFill" class="image-item" bindtap="previewImage" data-url="{{item.tempFileURL}}"></image>
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="actions">
+    <button class="btn reject" bindtap="handleReview" data-status="rejected">拒绝</button>
+    <button class="btn approve" bindtap="handleReview" data-status="approved">通过</button>
+  </view>
+</view>

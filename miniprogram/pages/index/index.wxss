@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center;     /* 垂直居中 */
+    height: 100vh;           /* 高度占满视口 */
+    background-color: #f7f7f7; /* 背景色 */
+  }
+  
+  .login-btn {
+    background-color: #1aad19; /* 微信绿色 */
+    color: #ffffff;             /* 字体颜色 */
+    font-size: 16px;            /* 字体大小 */
+    padding: 10px 20px;         /* 内边距 */
+    border: none;               /* 无边框 */
+    border-radius: 4px;        /* 圆角 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+    transition: background-color 0.3s; /* 背景色过渡效果 */
+  }
+  
+  .login-btn:hover {
+    background-color: #168a15; /* 悬停时的背景色 */
+  }
